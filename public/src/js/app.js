@@ -14,3 +14,10 @@ window.addEventListener('beforeinstallprompt', function(event) {
     deferredPrompt = event;
     return false;
 });
+
+setTimeout(function() {
+
+}, 3000);
+
+console.log('This is executed right after setTimeout()');
+/* up to 2:34 */

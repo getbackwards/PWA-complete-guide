@@ -3,7 +3,7 @@ var deferredPrompt;
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('/sw.js')
-        .then(function() {
+        .then(function () {
             console.log('Service worker registered!')
         });
 }
@@ -16,8 +16,7 @@ window.addEventListener('beforeinstallprompt', function(event) {
 });
 
 setTimeout(function() {
-
+    console.log('This is executed once the timer is done!');
 }, 3000);
 
 console.log('This is executed right after setTimeout()');
-/* up to 2:34 */

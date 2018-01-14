@@ -1,4 +1,8 @@
-var deferredPrompt
+var deferredPrompt;
+
+if (!window.Promise) {
+    window.Promise = Promise;
+}
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
@@ -25,15 +29,15 @@ var myPromise = new Promise(function (resolve, reject) {
     }, 3000);
 });
 
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://httpbin.org/ip');
-xhr.responseType = 'json';
-
-xhr.onload = function () {
-    console.log('Error');
-};
-
-xhr.send();
+// var xhr = new XMLHttpRequest();
+// xhr.open('GET', 'https://httpbin.org/ip');
+// xhr.responseType = 'json';
+//
+// xhr.onload = function () {
+//     console.log('Error');
+// };
+//
+// xhr.send();
 
 fetch('https://httpbin.org/ip')
     .then(function (response) {
